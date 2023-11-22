@@ -1,0 +1,38 @@
+.play-container .image-gallery {
+    width: 100%;
+    height: 50vh;
+    font-size: smaller;
+    overflow: hidden;
+}
+
+.play-container .image-gallery-slide{
+   width: 100%;
+    height:50vh;
+    overflow: hidden;
+}
+.play-container .image-gallery-slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.progress{
+    margin-top:20px;
+}
+
+.nav-buttons{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+} 
+ 
+.play-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+.content{
+    flex:1;
+    overflow: hidden;
+}
