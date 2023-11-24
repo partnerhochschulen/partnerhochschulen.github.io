@@ -157,8 +157,8 @@ export const data = [
       website:"",
       images: [
         {
-          original:'images/south_america/mexico/guadelajara/hospicio_cabanas.jpg' ,
-          thumbnail:'images/south_america/mexico/hospicio_cabanas.jpg' ,
+          original:'images/south_america/mexico/guadelajara/hospicio_cabanas.JPG' ,
+          thumbnail:'images/south_america/mexico/hospicio_cabanas.JPG' ,
           originalTitle:'https://de.wikipedia.org/wiki/Hospicio_Caba%C3%B1as',
           description:'Hospicio Cabañas',
         },
@@ -169,8 +169,8 @@ export const data = [
           description:'Die Kathedrale von Guadalajara',
         },
        {
-          original:'/images/south_america/mexico/guadelajara/teatro_degollado_guadalajara.jpg' ,
-          thumbnail:'/images/south_america/mexico/teatro_degollado_guadalajara.jpg' ,
+          original:'/images/south_america/mexico/guadelajara/teatro_degollado_guadalajara.JPG' ,
+          thumbnail:'/images/south_america/mexico/teatro_degollado_guadalajara.JPG' ,
           originalTitle:'https://de.wikipedia.org/wiki/Teatro_Degollado',
           description:'Das Teatro Degollado',
         },
@@ -200,8 +200,8 @@ export const data = [
       website:"",
       images: [
         {
-          original:'/images/south_america/mexico/mexico_city/palacio_national_mexico_city.jpg' ,
-          thumbnail:'/images/south_america/mexico/mexico_city/palacio_national_mexico_city.jpg' ,
+          original:'/images/south_america/mexico/mexico_city/palacio_national_mexico_city.JPG' ,
+          thumbnail:'/images/south_america/mexico/mexico_city/palacio_national_mexico_city.JPG' ,
           originalTitle:'https://de.wikipedia.org/wiki/Palacio_Nacional_(Mexiko)',
           description:'Palacio Nacional',
         },
@@ -465,8 +465,8 @@ export const data = [
           description:'Roter Platz'
         },
         {
-          original:'/images/europe/russia/moscow/bolshoi_theatre.jpg' ,
-          thumbnail:'/images/europe/russia/moscow/bolshoi_theatre.jpg' ,
+          original:'/images/europe/russia/moscow/bolshoi_theatre.JPG' ,
+          thumbnail:'/images/europe/russia/moscow/bolshoi_theatre.JPG' ,
           originalTitle:'https://de.wikipedia.org/wiki/Bolschoi-Theater#/media/Datei:Moscow_Bolshoi_Theatre_2011.JPG',
           description:'Bolshoi Theatre'
         },
