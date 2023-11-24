@@ -2,7 +2,7 @@
   "name": "my-map-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://partnerhochschulen-der-th-koeln.github.io/partnerhochschulen-der-th-koeln.github.io",
+  "homepage": "https://partnerhochschulen.github.io",
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
