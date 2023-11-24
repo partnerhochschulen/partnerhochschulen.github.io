@@ -66,8 +66,8 @@ export const data = [
           description:'Longhua Temple',
         },
         {
-          original:'images/asia/china/fuxing_park.jpg' ,
-          thumbnail:'images/asia/china/fuxing_park.jpg' ,
+          original:'images/asia/china/fuxing_park.JPG' ,
+          thumbnail:'images/asia/china/fuxing_park.JPG' ,
           originalTitle:'https://en.wikipedia.org/wiki/Fuxing_Park',
           description:'Fuxing Park',
         }
