@@ -3,11 +3,11 @@ import './Main.css';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import Button from '@mui/material/Button';
 import { useNavigate } from "react-router-dom";
-import { Map } from 'react-map-gl';
-import maplibregl from 'maplibre-gl';
-import { NavigationControl } from 'react-map-gl';
+// import { Map } from 'react-map-gl';
+// import maplibregl from 'maplibre-gl';
+// import { NavigationControl } from 'react-map-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
-import {mapStyle} from '../misc/const';
+// import {mapStyle} from '../misc/const';
 import * as texts from '../misc/texts';
 import MapComponent from '../map/MapComponent';
 

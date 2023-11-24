@@ -15,11 +15,10 @@ function MapComponent({data, setSchoolName,
         const [lng] = useState(10);
         const [lat] = useState(20);
         const [zoom] = useState(1);
-        const [API_KEY] = useState('kjQvurI9caYwwtweojCm');
+        // const [API_KEY] = useState('kjQvurI9caYwwtweojCm');
         const currentMarker = useRef(null);
         const answerMarker = useRef(null);
         const isGuessTaken = useRef(guessTaken);
-        const [mapController, setMapController] = useState();
         const lineSource = {
             type: 'geojson',
             data: {
@@ -169,9 +168,9 @@ function MapComponent({data, setSchoolName,
             }
         }
         
-        const removeMarker = (marker) => {
-            marker.remove();
-        }
+        // const removeMarker = (marker) => {
+        //     marker.remove();
+        // }
 
         const setAnswerMarkerOnMap = () =>{
             answerMarker.current = markerToDisplay[round][1];
