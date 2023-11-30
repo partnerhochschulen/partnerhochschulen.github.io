@@ -19,7 +19,6 @@ function MapComponent({data, setSchoolName,
         const currentMarker = useRef(null);
         const answerMarker = useRef(null);
         const isGuessTaken = useRef(guessTaken);
-        const locations = data;
         const lineSource = {
             type: 'geojson',
             data: {
@@ -123,20 +122,22 @@ function MapComponent({data, setSchoolName,
             }
             // map for the play container without data
             if(mode ==="play" && isMounted){
-                map.current.on('click', (e) => setMarkerOnMap(e));
-                if(isGuessTaken.current){
-                    if(currentMarker.current === null && markerToDisplay[round][0].getLngLat() !== undefined){
-                        setCurrentMarkerOnMap();
+                if(round >= playedRounds){
+                    map.current.on('click', (e) => {setMarkerOnMap(e)});
+                    if(isGuessTaken.current){
+                        if(currentMarker.current === null && markerToDisplay[round][0].getLngLat() !== undefined){
+                            setCurrentMarkerOnMap();
+                        }
+                        if(currentMarker.current !== null){
+                            evaluateGuess();
+                        }
                     }
-                    if(currentMarker.current !== null){
-                        evaluateGuess();
-                    }
-                }
-                else if(round < playedRounds){
+                
+                } else if(round < playedRounds){
                     // show the markers from the previous rounds
                     // allow the user to navigate back to played rounds and see results
                     showPreviousRounds();
-                }
+                } 
             }
 
             //map for the partnerschools container with data
@@ -166,7 +167,6 @@ function MapComponent({data, setSchoolName,
                 let distance = calculate_distance_in_km(coordinates);
                 let points = calculate_points(distance);
                 markerToDisplay[round][2] = distance;
-                markerToDisplay[round][3] = points;
             }
         }
         const setAnswerMarkerOnMap = () =>{
@@ -310,7 +310,7 @@ function MapComponent({data, setSchoolName,
                     if(!alreadyInMapAndPhoto){
                         setGoToMapAndPhoto(true);
                     }
-                });
+                }, false);
             });
         };
 
