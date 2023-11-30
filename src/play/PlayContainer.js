@@ -44,8 +44,6 @@ function PlayContainer({randomPhotos}){
             setPlayedRounds(getPlayedRounds());
             setPhotoToShow([randomPhotos[curr + 1]]);
             guessTaken.current = false;
-            
-            console.log("next:",guessTaken.current);
         }
         else{
             setEndResultForEndGame(endResult);
@@ -59,7 +57,6 @@ function PlayContainer({randomPhotos}){
         if (curr > 0){
             setCurr(curr-1);
             setPhotoToShow([randomPhotos[curr-1]]);
-            console.log("prev:",guessTaken.current);
         }
     }
     // answer

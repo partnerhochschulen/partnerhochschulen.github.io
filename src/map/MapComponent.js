@@ -122,6 +122,7 @@ function MapComponent({data, setSchoolName,
             }
             // map for the play container without data
             if(mode ==="play" && isMounted){
+                // allow marker to be set only if the round is not played yet
                 if(round >= playedRounds){
                     map.current.on('click', (e) => {setMarkerOnMap(e)});
                     if(isGuessTaken.current){
