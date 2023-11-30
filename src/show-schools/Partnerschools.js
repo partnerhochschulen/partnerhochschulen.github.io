@@ -17,7 +17,7 @@ function Partnerschools(){
     return (
     !goToMapAndPhoto ? (
       <div className='partnerschools-container'>
-        <span>{texts.partnerschools_note}</span>
+        <div className ="note"><span>{texts.partnerschools_note}</span></div>
 
         <div className='big-map'>
           <MapComponent data={data} setSchoolName={setSchoolName}
