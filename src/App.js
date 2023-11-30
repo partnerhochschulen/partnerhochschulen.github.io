@@ -12,7 +12,7 @@ import {
 } from "react-router-dom";
 import Main from './main/Main';
 import Partnerchools from './show-schools/Partnerschools';
-import MapAndPhoto from './misc/MapAndPhoto';
+import MapAndPhoto from './show-schools/MapAndPhoto';
 import Play from './play/Play';
 import Dialog from '@mui/material/Dialog';
 import MdHelpOutline  from '@mui/icons-material/HelpOutline';
@@ -88,7 +88,7 @@ function App() {
                   <Route path="/instructions" element={<Instructions />} />
                   <Route path="/show-schools" element={<Partnerchools />} />
                   <Route path="/play" element={<Play />} />
-                  <Route path='/misc/MapAndPhoto' element={<MapAndPhoto />} />
+                  <Route path='/show-schools/MapAndPhoto' element={<MapAndPhoto />} />
                   <Route path="/end-game" element={<EndGame />} />
                   <Route path="/error404" element={<Error404 />} />
                 </Routes>

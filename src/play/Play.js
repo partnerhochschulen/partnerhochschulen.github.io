@@ -1,5 +1,5 @@
 import React from 'react';
-import PlayContainer from '../misc/PlayContainer';
+import PlayContainer from '../play/PlayContainer';
 import {data} from '../misc/locations';
 import { number_of_rounds } from '../misc/const';
 import { useEffect } from 'react';

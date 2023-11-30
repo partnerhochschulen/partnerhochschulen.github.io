@@ -5,7 +5,7 @@ import MapComponent from '../map/MapComponent';
 import './Partnerschools.css';
 import {data} from '../misc/locations';
 import { useState } from 'react';
-import MapAndPhoto from '../misc/MapAndPhoto';
+import MapAndPhoto from '../show-schools/MapAndPhoto';
 import { ArrowBack } from '@mui/icons-material';
 import * as texts   from '../misc/texts';
 

@@ -8,12 +8,12 @@ import MapComponent from '../map/MapComponent';
 import './PlayContainer.css'
 import ImageGallery from "react-image-gallery";
 import {data} from '../misc/locations';
-import { number_of_rounds } from './const';
+import { number_of_rounds } from '../misc/const';
 import { ArrowBack } from '@mui/icons-material';
 import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
-import { useEndResult } from './EndResultContex';
-import * as texts from './texts';
+import { useEndResult } from '../misc/EndResultContex';
+import * as texts from '../misc/texts';
 
 
 function PlayContainer({randomPhotos}){
