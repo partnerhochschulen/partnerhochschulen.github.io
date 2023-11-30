@@ -15,15 +15,17 @@ import Partnerchools from './show-schools/Partnerschools';
 import MapAndPhoto from './misc/MapAndPhoto';
 import Play from './play/Play';
 import Dialog from '@mui/material/Dialog';
-import IconButton from '@mui/material/IconButton';
-import HelpIcon from '@mui/icons-material/Help';
+import MdHelpOutline  from '@mui/icons-material/HelpOutline';
 import { styled } from '@mui/material/styles';
 import { Tooltip } from 'react-tooltip'
 import EndGame from './end-game/EndGame';
 import Error404 from './errors/Error404';
 import { EndResultProvider } from './misc/EndResultContex';
 import * as texts from './misc/texts';
-  
+import { Backdrop, Fab, IconButton } from '@mui/material';
+import {Button} from '@mui/material';
+import CircularProgress from '@mui/material/CircularProgress';
+
 function App() {
   const [load, setLoad] = useState(true);
   useEffect(() => {
@@ -72,33 +74,16 @@ function App() {
               </div>
               <div className='title-and-instructions'>
                 <div className='title'>
-                  <h2>{texts.title}</h2>
+                  <h2>{texts.title}
+                  </h2>
                   <h3>{texts.second_title}</h3>
                 </div>
                 
-                <IconButton 
-                  onClick={()=>{
-                    setOpen(true);
-                  }}
-                  style={{
-                    marginLeft: "5px",
-                  }}
-                  data-tooltip-id="my-tooltip"
-                >
-                  <Tooltip id="my-tooltip"
-                  place="right"
-                   style ={{
-                    fontSize: "12px",
-                  }}>
-                    {texts.instructions_tooltip}
-                  </Tooltip>
-                  <HelpIcon />
-                </IconButton>
+                
               </div>
-              <BootstrapDialog open={open} onClose={handleClose} aria-labelledby="customized-dialog-title">
+              {/* <BootstrapDialog open={open} onClose={handleClose} aria-labelledby="customized-dialog-title">
                 <Instructions close = {handleClose} />
-              </BootstrapDialog>
-  
+              </BootstrapDialog> */}
   
               <Router>
                 <Routes>
@@ -111,6 +96,26 @@ function App() {
                   <Route path="/error404" element={<Error404 />} />
                 </Routes>
               </Router>
+              <div className='action-menu-instructions'>
+                <IconButton color="primary" size="large"
+                  onClick={()=>{setOpen(!open)}}>
+                    <Tooltip id="my-tooltip"
+                      place="right"
+                      style ={{
+                        fontSize: "12px",
+                      }}>
+                        {texts.instructions_tooltip}
+                    </Tooltip>
+                  <MdHelpOutline fontSize="large" />
+                </IconButton>
+                
+                <Backdrop open={open}>
+                  <BootstrapDialog open={open} onClose={handleClose} aria-labelledby="customized-dialog-title">
+                    <Instructions close = {handleClose} />
+                  </BootstrapDialog>
+                </Backdrop>
+                
+              </div>
             </div>
           )
         }

@@ -99,7 +99,7 @@ function MapAndPhoto({propSchoolName}){
             <Button  variant ="outlined" color="secondary"
             style ={{
                 position: "relative",
-                margin: "10px",
+                margin: "5px",
                 width: "fit-content",
             }}
             onClick={()=>{

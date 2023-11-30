@@ -26,13 +26,13 @@ export const instructions = ["Über die App", "Mit dieser App können Sie die Pa
 "und dem richtigen Zielort wird angezeigt. Je nach Entfernung ändert sich Ihre "+
 "Punktezahl. Sie können zu vorherigen Runden navigieren. "];
 export const points =["Punkte",
-"Wenn Sie das richtige Land ausgewählt haben, dann bekommen Sie </br> <span><b>5 Punkte.</span></br></b>"+
 "Je nach Distanz zum richtigen Standort werden noch Punkte wie folgend vergeben:</br>"+
 "</br> <span>"+
-" <b>+ 1 Punkt</b> bei >500 km </br>"+
-" <b>+ 2 Punkte</b> zwischen 300 km und 500 km </br>"+
-" <b>+ 3 Punkte</b> zwischen 100 km und 300 km </br>"+
-" <b>+ 4 Punkte</b> bei <100 km </br>"+
+" <b>+ 1 Punkt</b> zwischen 800 km und 1000 km </br>"+
+" <b>+ 2 Punkte</b> zwischen 500 km und 800 km </br>"+
+" <b>+ 3 Punkte</b> zwischen 300 km und 500 km </br>"+
+" <b>+ 4 Punkte</b> zwischen 100 km und 300 km </br>"+
+" <b>+ 5 Punkte</b> bei <100 km </br>"+
 "</span>"+
 
 "Das Spiel lässt sich mehrmals spielen.</br></br>"+

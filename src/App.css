@@ -5,6 +5,7 @@
   max-width: 1500px;
   min-width: 900px;
   margin: auto;
+  flex-wrap: wrap;
 }
 
 .loading{
@@ -18,12 +19,16 @@
   align-items: center;
 }
 .title-and-instructions{
-  display: flex;
+  /* display: flex;
   justify-content:center;
   align-items: center;
   height: 10vh;
   width:100%;
-  height:50%;
+  height:50%; */
+  .title{
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
   .title h2{
     margin-bottom: 0;
     margin-top:10px;
@@ -44,14 +49,22 @@ iframe#webpack-dev-server-client-overlay{display:none !important}
   margin: auto;
   object-fit: cover;
 }
-@media only screen and (max-width: 600px) {
+
+.action-menu-instructions{
+  position:absolute;
+  top: 0;
+  right:20px;
+  width:max-content;
+}
+@media only screen and (max-width: 500px) {
+  .App{
+    min-width: 300px;
+  }
   .big-map{
-    width:100%;
+    width:70%;
   }
   .title{
     font-size: smaller;
-  }
-  .logo img{
-    width: 199px;
+    padding:30px;
   }
 }

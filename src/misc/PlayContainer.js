@@ -189,7 +189,7 @@ function PlayContainer({randomPhotos}){
                         navigate('/')
                         }}
                         style = {{
-                            margin: "10px",
+                            margin: "5px",
                         }}>
                         <ArrowBack />
                         {texts.back_to_main}
