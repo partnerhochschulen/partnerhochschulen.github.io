@@ -40,14 +40,14 @@
 
 .map-and-photo h4{
     font-size: small;
-    margin-bottom:0;
-    flex: 1 0 auto;
+    flex: 1 0;
+    margin: 0;
 }
 .map-and-photo p{
-    margin-top:5px;
     font-size:small;
     overflow-y: visible;
-    flex: 1 0 auto;
+    flex: 1 0;
+    margin:0;
 }
 .map-and-photo .place{
     font-size:small;

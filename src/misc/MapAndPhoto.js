@@ -50,21 +50,31 @@ function MapAndPhoto({propSchoolName}){
                     }}
                 >
                     <ImageGallery items={selectedSchool.images} thumbnailPosition='left' />
-                    <Container>
+                    <Container style = {{
+                        display:"flex",
+                        flexDirection:"row",
+                        justifyContent:"center",
+                        alignItems:"center",
+                        width:"100%",
+                        flexWrap:"wrap",}}>
                         <Info sx={{
                             display:"flex",
                             flexDirection: "row",
+                            justifyContent:"center",
+                            alignItems:"center",
+                            
+                            width:"100%",
                             }}>
                                 <Box 
                                 sx={{
-                                    width:"40%",
-                                    height:"25vh",
                                     padding:"2px",
                                     display:"flex",
-                                    flexDirection:"column",
-                                    justifyContent:"center",
                                     alignItems:"center",
+                                    justifyContent:"center",
+                                    flexDirection:"column",
                                     fontSize:"14px",
+                                    overflow:"auto",
+                                    width:"40%"
                                     }}>
                                         <h4>{selectedSchool.school}
                                             <a href={selectedSchool.website !== "" ? selectedSchool.website : "/error404" } target="_blank" rel="noreferrer">
@@ -81,15 +91,14 @@ function MapAndPhoto({propSchoolName}){
                                     alignItems:"center",
                                     fontSize:"14px",
                                     overflow:"auto",
-                                    marginTop:"5px",
-                                    width:"60%",
+                                    width:"60%"
                                     }}>
                                         <div className ="courses-of-study">
                                             <h4>{texts.for_these_courses_of_study}</h4>
                                             <p>{selectedSchool.course_of_study}</p>
                                         </div>
                                 </Box>
-                            </Info>
+                        </Info>
                     </Container>
                 </Item>
 
