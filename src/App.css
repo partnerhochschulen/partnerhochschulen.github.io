@@ -2,7 +2,9 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  margin-top: 0;
+  max-width: 1500px;
+  min-width: 900px;
+  margin: auto;
 }
 
 .loading{
@@ -44,6 +46,12 @@ iframe#webpack-dev-server-client-overlay{display:none !important}
 }
 @media only screen and (max-width: 600px) {
   .big-map{
-    width:50%;
+    width:100%;
+  }
+  .title{
+    font-size: smaller;
+  }
+  .logo img{
+    width: 199px;
   }
 }

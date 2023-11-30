@@ -1,22 +1,9 @@
-/* 
-  #map-container{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    border: red solid;
-    height: 70vh;
-  } */
-
-  /* .buttons{
-    position: relative;
-    display: inline-block;
-    justify-content: space-around;
-    align-items: center;
-    border: pink solid;
-  
-  } */
-  .startGame{
-    padding-right: 10px;
+  @media only screen and (max-width: 600px){
+    .buttons{
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+    }
   }
   
   

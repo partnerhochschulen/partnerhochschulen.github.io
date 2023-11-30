@@ -125,7 +125,7 @@ function PlayContainer({randomPhotos}){
     return (
         <div className="play-container">
             <div className="content">
-                <Stack direction="row" spacing={4} style = {{padding:'10px'}}>
+                <Stack direction="row" spacing={4} style = {{padding:'5px'}}>
                     <Item sx={{
                             width: '50%',
                         }}
@@ -160,11 +160,16 @@ function PlayContainer({randomPhotos}){
                                 <span>{texts.round} {curr+1}/{number_of_rounds}, </span>
                                 <span>{texts.number_of_points} {endResult}</span>
                             </div>
-                            {/* <div style={{
-                                display: markerToDisplay[curr] === undefined ? 'none' : 'block' 
-                            }}>
-                                <span>Entfernung: {markerToDisplay[curr] === undefined ? '' : markerToDisplay[curr][2]}</span>
-                            </div> */}
+                    <Button variant ="contained"
+                    onClick={take_guess}
+                    style = {{
+                        margin: "5px",
+                        position: "relative",
+                    }}
+                    disabled = {guessTaken.current || curr !== playedRounds}>
+                        {texts.take_guess}
+                    
+                    </Button>
                     </Item>
                     <Item sx={{
                         width: '50%',
@@ -174,22 +179,18 @@ function PlayContainer({randomPhotos}){
                             guessTaken={guessTaken.current} 
                             markerToDisplay ={markerToDisplay} 
                             round={curr}
-                            // setEndResult={setEndResult}
                             playedRounds = {playedRounds}
                             mode = "play"/>
                     </Item>
                 </Stack>
-                <div className='nav-buttons'>
-                    <Button variant ="contained"
-                    onClick={take_guess}
-                    disabled = {guessTaken.current || curr !== playedRounds}>
-                        {texts.take_guess}
-                    
-                    </Button>
+                <div className='buttons'>
                     <Button variant ="outlined" color="secondary"
-                    onClick={()=>{ 
-                    navigate('/')
-                    }}>
+                        onClick={()=>{ 
+                        navigate('/')
+                        }}
+                        style = {{
+                            margin: "10px",
+                        }}>
                         <ArrowBack />
                         {texts.back_to_main}
                     </Button>

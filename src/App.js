@@ -62,7 +62,7 @@ function App() {
           </div>  
           ):(
             <div>
-              <div>
+              <div className='logo'>
                 <img src="logo.jpg" alt="logo" style={{
                   width: "80px",
                   position: "absolute",
