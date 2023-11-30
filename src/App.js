@@ -81,9 +81,6 @@ function App() {
                 
                 
               </div>
-              {/* <BootstrapDialog open={open} onClose={handleClose} aria-labelledby="customized-dialog-title">
-                <Instructions close = {handleClose} />
-              </BootstrapDialog> */}
   
               <Router>
                 <Routes>
@@ -97,7 +94,7 @@ function App() {
                 </Routes>
               </Router>
               <div className='action-menu-instructions'>
-                <IconButton color="primary" size="large"
+                <IconButton color="primary" size="large" aria-label="instructions-button"
                   onClick={()=>{setOpen(!open)}}>
                     <Tooltip id="my-tooltip"
                       place="right"
