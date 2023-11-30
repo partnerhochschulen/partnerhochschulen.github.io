@@ -17,6 +17,7 @@ import Box from '@mui/material/Box';
 import { MdOpenInNew, MdPlace } from "react-icons/md";
 import { ArrowBack } from '@mui/icons-material';
 import * as texts from '../misc/texts';
+import { Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material';
 
 function MapAndPhoto({propSchoolName}){
     const Item = styled(Paper)(({ theme }) => ({
@@ -59,22 +60,10 @@ function MapAndPhoto({propSchoolName}){
                         flexWrap:"wrap",}}>
                         <Info sx={{
                             display:"flex",
-                            flexDirection: "row",
-                            justifyContent:"center",
-                            alignItems:"center",
-                            
-                            width:"100%",
                             }}>
-                                <Box 
+                                {/* <Box 
                                 sx={{
-                                    padding:"2px",
-                                    display:"flex",
-                                    alignItems:"center",
-                                    justifyContent:"center",
-                                    flexDirection:"column",
-                                    fontSize:"14px",
-                                    overflow:"auto",
-                                    width:"40%"
+                                    width:"40%",
                                     }}>
                                         <h4>{selectedSchool.school}
                                             <a href={selectedSchool.website !== "" ? selectedSchool.website : "/error404" } target="_blank" rel="noreferrer">
@@ -97,7 +86,25 @@ function MapAndPhoto({propSchoolName}){
                                             <h4>{texts.for_these_courses_of_study}</h4>
                                             <p>{selectedSchool.course_of_study}</p>
                                         </div>
-                                </Box>
+                                </Box> */}
+                            <Table >
+                                <tr>
+                                    <td>
+                                        <h4>{selectedSchool.school}
+                                            <a href={selectedSchool.website !== "" ? selectedSchool.website : "/error404" } target="_blank" rel="noreferrer">
+                                                <MdOpenInNew />
+                                            </a>
+                                        </h4>
+                                        <p className="place"><MdPlace />{selectedSchool.place}, {selectedSchool.land}</p>
+                                    </td>
+                                    <td>
+                                        <div className ="courses-of-study">
+                                            <h4>{texts.for_these_courses_of_study}</h4>
+                                            <p>{selectedSchool.course_of_study}</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </Table>
                         </Info>
                     </Container>
                 </Item>
