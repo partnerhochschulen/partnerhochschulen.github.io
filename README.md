@@ -45,25 +45,22 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
 ### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- this means that the app can be downloaded from the browser
+- to configure a progressive web app or to see if ht ecriteria is met go to website->inspect->lighthouse-> choose category "Progressive Web App" and run the "Analyze the page load"
+- Learn more here: https://developer.chrome.com/docs/lighthouse/pwa/installable-manifest/?utm_source=lighthouse&utm_medium=devtools
 
 ### Advanced Configuration
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+### Get started and deploy Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+1. Clone the repo
+2. run "npm install" to installl all the node modules because they are not being kept in github
+3. run "npm run build" to install the "build" folder that contains the logic for production building
+4. run "npm run deploy" to deploy any new changes to production version
+5. in github go to repo -> actions -> you can see if the build was succesfull when the last job is green. Clicking on it will give you more details
 
 ### `npm run build` fails to minify
 
@@ -79,12 +76,15 @@ Um einen neuen Text hinzuzufügen wird eine neue Konstante erstellt. Die Konstan
 # Konfig Dateien
 ## texts.js
 Hier kann man die Texte zentral verwalten.
-Jeder Text wird als Konstante definiert und ist ein Array aus <b>Titeltext</b> in Position 1 und <b>Inhaltstext</b> an Position 2.
+Die Texte sind als Konstante definiert und können ein Array aus <b>Titeltext</b> in Position 1 und <b>Inhaltstext</b> an Position 2 sein oder einfache Strings. </br>
+Die Texte sind nach Komponente unterteilt.
+
 ## locations.js
 Hier sind die Schulen mit Koordinaten und Bildern.
 Eine Schule hat ein Array mit Bildern. Die Bilder beinhalten 4 props: <b>original</b> (Pfad zum Bild), <b>thumbnail</b> (Pfad zum Bild um ein kleines Bild als Preview zu generieren), <b>originalTitle</b> (Quelle des Bildes, wird als Tooltip angezeigt), <b>description</b> (Name der Sehenswürdigkeit).
 </br>
 <b>1 Bild = 1 Sehenswürdigkeit </b>
+
 ## const.js
 Hier werden:
 - die Anzahl der Runden
