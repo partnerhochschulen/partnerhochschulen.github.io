@@ -152,6 +152,7 @@ function MapComponent({data, setSchoolName,
             }
             
         });
+        
         const setMarkerOnMap = (e) => {
             if(answerMarker.current === null){
                 const marker =  markerToDisplay[round][0]
@@ -171,16 +172,7 @@ function MapComponent({data, setSchoolName,
         const setAnswerMarkerOnMap = () =>{
             answerMarker.current = markerToDisplay[round][1];
             answerMarker.current.addTo(map.current);
-            let school = getSchoolFromGeoCoordinates(answerMarker.current.getLngLat().lng, answerMarker.current.getLngLat().lat);
-            console.log(school);
-            const popup = new maplibregl.Popup({
-                closeButton: true,
-                closeOnClick: true,
-                anchor: 'bottom-left',
-                offset: [0, -10],
-                className: 'hover-popup'
-            }).setHTML(school.info);
-            answerMarker.current.setPopup(popup);
+            
         }
         const setCurrentMarkerOnMap = () =>{
             currentMarker.current = markerToDisplay[round][0];
@@ -207,6 +199,7 @@ function MapComponent({data, setSchoolName,
             await map.current.once('moveend').then(() => {
                 setLayers(coordinates);
             });
+            setInfoPopup();
             
         }
         const showPreviousRounds = async () =>{
@@ -225,8 +218,23 @@ function MapComponent({data, setSchoolName,
                     essential: true,
                 });
                 setLayers([ markerToDisplay[round][0].getLngLat().toArray(), markerToDisplay[round][1].getLngLat().toArray()]);
+                setInfoPopup();
             }
             
+        }
+
+        const setInfoPopup = ()=>{
+            if(markerToDisplay[round][1].getLngLat() !== undefined){
+                const school = getSchoolFromGeoCoordinates(markerToDisplay[round][1].getLngLat().lng, markerToDisplay[round][1].getLngLat().lat);
+                const popup = new maplibregl.Popup({
+                    closeButton: true,
+                    closeOnClick: false,
+                    anchor: 'bottom-left',
+                    offset: [0, -10],
+                    className: 'hover-popup'
+                }).setHTML(school.info);
+                popup.setLngLat(markerToDisplay[round][1].getLngLat()).addTo(map.current);
+            }
         }
 
         const setLayers = async (coordinates) =>{
