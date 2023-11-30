@@ -14,7 +14,8 @@ import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import { useEndResult } from '../misc/EndResultContex';
 import * as texts from '../misc/texts';
-
+import {toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 function PlayContainer({randomPhotos}){
     const navigate = useNavigate();
@@ -121,6 +122,27 @@ function PlayContainer({randomPhotos}){
         return filtered.length;
     }
 
+    const notify = ()=>{
+        toast.warn("Wenn du zurück zur Hauptansicht gehst, wirst du deine Punkte verlieren.", 
+        {
+            position: toast.POSITION.TOP_CENTER,
+        }
+        );   
+    }
+    const CloseButton = ({ closeToast }) => (
+        <i
+          className="material-icons"
+          onClick={()=> {
+                    closeToast();
+                    navigate('/');
+                }
+            }
+        >
+        Zurück zur Hauptansicht
+        </i>
+        
+      );
+
     return (
         <div className="play-container">
             <div className="content">
@@ -184,15 +206,14 @@ function PlayContainer({randomPhotos}){
                 </Stack>
                 <div className='buttons'>
                     <Button variant ="outlined" color="secondary"
-                        onClick={()=>{ 
-                        navigate('/')
-                        }}
+                        onClick={notify}
                         style = {{
                             margin: "5px",
                         }}>
                         <ArrowBack />
                         {texts.back_to_main}
                     </Button>
+                    <ToastContainer closeButton={CloseButton} limit ={1}/>
                 </div>
             </div>
             
