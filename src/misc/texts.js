@@ -53,6 +53,7 @@ export const for_these_courses_of_study = "Für folgende Studiengänge verfügba
 //PlayContainer.js
 export const round = "Runde: ";
 export const number_of_points = "Punkte: ";
+export const warning = "Du wirst deine Punkte verlieren!";
 
 //MapComponent.js
 

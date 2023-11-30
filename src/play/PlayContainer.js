@@ -121,27 +121,24 @@ function PlayContainer({randomPhotos}){
         var filtered = markerToDisplay.filter(round => round[0].getLngLat() !== undefined);
         return filtered.length;
     }
-
+    const notified = useRef(false);
     const notify = ()=>{
-        toast.warn("Wenn du zurück zur Hauptansicht gehst, wirst du deine Punkte verlieren.", 
+        toast.warn(texts.warning, 
         {
             position: toast.POSITION.TOP_CENTER,
         }
         );   
+        notified.current = true;
     }
-    const CloseButton = ({ closeToast }) => (
-        <i
-          className="material-icons"
-          onClick={()=> {
-                    closeToast();
-                    navigate('/');
-                }
-            }
-        >
-        Zurück zur Hauptansicht
-        </i>
+    const handleGoBack = () =>{
+        if(notified.current){
+            navigate('/');
+        }
+        else {
+            notify();
+        }
         
-      );
+    }
 
     return (
         <div className="play-container">
@@ -206,14 +203,14 @@ function PlayContainer({randomPhotos}){
                 </Stack>
                 <div className='buttons'>
                     <Button variant ="outlined" color="secondary"
-                        onClick={notify}
+                        onClick={handleGoBack}
                         style = {{
                             margin: "5px",
                         }}>
                         <ArrowBack />
                         {texts.back_to_main}
                     </Button>
-                    <ToastContainer closeButton={CloseButton} limit ={1}/>
+                    <ToastContainer autoClose = {5000} limit ={1}/>
                 </div>
             </div>
             

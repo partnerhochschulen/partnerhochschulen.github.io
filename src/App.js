@@ -22,9 +22,7 @@ import EndGame from './end-game/EndGame';
 import Error404 from './errors/Error404';
 import { EndResultProvider } from './misc/EndResultContex';
 import * as texts from './misc/texts';
-import { Backdrop, Fab, IconButton } from '@mui/material';
-import {Button} from '@mui/material';
-import CircularProgress from '@mui/material/CircularProgress';
+import { Backdrop, IconButton } from '@mui/material';
 
 function App() {
   const [load, setLoad] = useState(true);
