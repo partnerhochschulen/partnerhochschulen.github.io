@@ -35,7 +35,7 @@ export const data = [
           description:'La Sebastiana Museum House',
         },
       ],
-      info:"" 
+      info:"Placeholder for info text" 
     },
     {
       continent: "Asia",
@@ -73,7 +73,7 @@ export const data = [
           description:'Fuxing Park',
         }
       ],
-      info:""
+      info:"Placeholder for info text"
     },
     {
       continent: "Asia",
@@ -115,7 +115,7 @@ export const data = [
           originalTitle:'https://jordan-travel.com/odeon-theater-amman/',
           description:'Odeon Theater',}
       ],
-      info:""
+      info:"Placeholder for info text"
     },
     {
       continent: "Asia",
@@ -147,7 +147,7 @@ export const data = [
           description:'Die Kirgisische Staatsphilharmonie Bischkek',
         }
       ],
-      info:""
+      info:"Placeholder for info text"
     },
     {
       continent: "South America",
@@ -191,7 +191,7 @@ export const data = [
           description:'Los Archos',
         }
       ],
-      info:""
+      info:"Placeholder for info text"
     },
     {
       continent: "South America",
@@ -235,7 +235,7 @@ export const data = [
           description:'Coyoacán – der Ort der Kojoten, Schriftsteller und Künstler',
         }
       ],
-      info:""
+      info:"Placeholder for info text"
     },
     {
       continent: "South America",
@@ -274,7 +274,7 @@ export const data = [
         }
 
       ],
-      info:""
+      info:"Placeholder for info text"
     },
     {
       continent: "South America",
@@ -312,7 +312,7 @@ export const data = [
           description:' Cuexcomate Volcano'
         },
       ],
-      info:""
+      info:"Placeholder for info text"
     },
     {
       continent: "South America",
@@ -376,7 +376,7 @@ export const data = [
           description:'Völkerbundpalast',
         }
       ],
-      info:""
+      info:"Placeholder for info text"
     },
     {
       continent: "Europe",
@@ -457,7 +457,7 @@ export const data = [
           description:'Deoksugung Palast',
         },
       ],
-      info:""
+      info:"Placeholder for info text"
     },
     {
       continent: "Europe",
@@ -501,7 +501,7 @@ export const data = [
           description:'Metro'
         },
       ],
-      info:""
+      info:"Placeholder for info text"
     },
     {
       continent: "South America",
@@ -539,7 +539,7 @@ export const data = [
           description:'Parque Municipal (Stadtpark)'
         },
       ],
-      info:""
+      info:"Placeholder for info text"
     },
     {
       continent: "Europe",
@@ -583,7 +583,7 @@ export const data = [
           description:'Mont des Arts'
         },
       ],
-      info:""
+      info:"Placeholder for info text"
     },
     {
       continent: "Europe",
@@ -677,7 +677,7 @@ export const data = [
           description:'Versteinerter Wald (Steinwald)'
         },
       ],
-      info:""
+      info:"Placeholder for info text"
     },
     {
       continent: "Europe",
@@ -747,7 +747,7 @@ export const data = [
           description:'Die Bastille'
         },
       ],
-      info:""
+      info:"Placeholder for info text"
     },
     {
       continent: "Europe",
@@ -835,7 +835,7 @@ export const data = [
           description:'The Island Of The Lake'
         },
       ],
-      info:""
+      info:"Placeholder for info text"
     },
     {
       continent: "Europe",
@@ -885,7 +885,7 @@ export const data = [
           description:'Castel Sant’Angelo'
         },
       ],
-      info:""
+      info:"Placeholder for info text"
     },
     //   coordinates were manually added
       {
