@@ -16,7 +16,6 @@ import { useEndResult } from './EndResultContex';
 import * as texts from './texts';
 
 
-
 function PlayContainer({randomPhotos}){
     const navigate = useNavigate();
     //const MemoizedMapComponent = React.memo(MapComponent);
@@ -178,6 +177,7 @@ function PlayContainer({randomPhotos}){
                             alreadyInMapAndPhoto={true}
                             guessTaken={guessTaken.current} 
                             markerToDisplay ={markerToDisplay} 
+                            data = {data}
                             round={curr}
                             playedRounds = {playedRounds}
                             mode = "play"/>

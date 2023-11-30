@@ -67,6 +67,17 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/a
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 # Über das Spiel
+## Funktionalitäten
+### Spiel spielen
+Das Spiel besteht aus mehreren Runden, deren Anzahl in der const.js Datei konfigurierbar ist. Ist eine Runde gespiel (= eine Schätzung ist abgegeben worden) besteht die Möglichkeit zu dieser Runde zurückzukehren und das Ergebnis erneut anzeigen zu lassen. Eine Fortschritssanzeige zeigt die Zahl der gespielten/ zu spielenden Runde.\
+ Ist eine Schätzung nicht abgegeben ist es nicht möglich zur nächsten Runde zu navigieren. Eine Schätzung abzugeben is nur dann möglich, wenn ein Schätzungsmarker auf der Karten gesetzt wurde.
+#### Bewertung der Schätzung
+Als Bewertung der Schätzung gilt das Anzeigen des richtigen Standortes der Partnerhochschule und die Distanz zwischen des richtigen Standortes (rot) und der Schätzung (blau). Außerdem wird die Punktezahl erhöht je nach Distanz zum richtigen Standort oder sie bleibt gleich, falls die Distanz zwischen Schätzung und Antwort viel zu groß ist.\
+Weitere Informationen zur Antwort sind durch das Klicken auf dem Antwortmarker (rot) verfügbar.
+
+### Partnerhochschulen anzeigen lassen
+Es ist möglich alle Partnerhochschulen, deren Standorte, Namen und Verfügbarkeit anzeigen zu lassen. Durch das Klick von dem Knopf "Partnerhochschulen anzeigen" wird eine Karte mit allen Partnerhochschulen der TH Köln angezeigt. Durch das Klicken auf einen Marker werden mehrere Informationen zu der Partnerhochschule und Sehenswürdigkeiten in der Stadt, in der sich die Partnerhochschule befindet, gezeigt. Die Bildergalerie ermöglicht eine Vollbild-Anzeige und ein SlideShow.
+
 ## Texte
 Die angezeigten Texte werden in der texts.js Datei verwaltet und als HTML gerendert, um eine schnellere und leitere Benutzung zu ermöglichen. 
 Um einen neuen Text hinzuzufügen wird eine neue Konstante erstellt. Die Konstante ist ein Array aus strings: Position 1: Titel, Position 2: Content. Um die Nutzung der bereits gerenderten Texte nutzt man: </br>
@@ -81,9 +92,10 @@ Die Texte sind nach Komponente unterteilt.
 
 ## locations.js
 Hier sind die Schulen mit Koordinaten und Bildern.
-Eine Schule hat ein Array mit Bildern. Die Bilder beinhalten 4 props: <b>original</b> (Pfad zum Bild), <b>thumbnail</b> (Pfad zum Bild um ein kleines Bild als Preview zu generieren), <b>originalTitle</b> (Quelle des Bildes, wird als Tooltip angezeigt), <b>description</b> (Name der Sehenswürdigkeit).
+Eine Schule hat Attribute und ein Array mit Bildern. Die Bilder beinhalten 4 props: <b>original</b> (Pfad zum Bild), <b>thumbnail</b> (Pfad zum Bild um ein kleines Bild als Preview zu generieren), <b>originalTitle</b> (Quelle des Bildes, wird als Tooltip angezeigt), <b>description</b> (Name der Sehenswürdigkeit).
 </br>
-<b>1 Bild = 1 Sehenswürdigkeit </b>
+<b>1 Bild = 1 Sehenswürdigkeit </b> \
+Die Attribute jedes Partnerhochschulenobjekts stammen aus der Excel Datei, die durch Prof. Irma Lindt zur Verfügung gestellt wurde. Ein weteres Attribut <b>"info"</b> soll die Möglichkeit stellen, über ein PopUp auf der Karte Informationen zur Partnerhochschule anzzuzeigen.
 
 ## const.js
 Hier werden:

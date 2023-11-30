@@ -61,32 +61,6 @@ function MapAndPhoto({propSchoolName}){
                         <Info sx={{
                             display:"flex",
                             }}>
-                                {/* <Box 
-                                sx={{
-                                    width:"40%",
-                                    }}>
-                                        <h4>{selectedSchool.school}
-                                            <a href={selectedSchool.website !== "" ? selectedSchool.website : "/error404" } target="_blank" rel="noreferrer">
-                                                <MdOpenInNew />
-                                            </a>
-                                        </h4>
-                                        <p className="place"><MdPlace />{selectedSchool.place}, {selectedSchool.land}</p>
-                                        
-                                </Box>
-                                <Box sx={{
-                                    display:"flex",
-                                    flexDirection:"row",
-                                    justifyContent:"center",
-                                    alignItems:"center",
-                                    fontSize:"14px",
-                                    overflow:"auto",
-                                    width:"60%"
-                                    }}>
-                                        <div className ="courses-of-study">
-                                            <h4>{texts.for_these_courses_of_study}</h4>
-                                            <p>{selectedSchool.course_of_study}</p>
-                                        </div>
-                                </Box> */}
                             <Table >
                                 <tr>
                                     <td>

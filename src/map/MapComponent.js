@@ -19,6 +19,7 @@ function MapComponent({data, setSchoolName,
         const currentMarker = useRef(null);
         const answerMarker = useRef(null);
         const isGuessTaken = useRef(guessTaken);
+        const locations = data;
         const lineSource = {
             type: 'geojson',
             data: {
@@ -175,6 +176,16 @@ function MapComponent({data, setSchoolName,
         const setAnswerMarkerOnMap = () =>{
             answerMarker.current = markerToDisplay[round][1];
             answerMarker.current.addTo(map.current);
+            let school = getSchoolFromGeoCoordinates(answerMarker.current.getLngLat().lng, answerMarker.current.getLngLat().lat);
+            console.log(school);
+            const popup = new maplibregl.Popup({
+                closeButton: true,
+                closeOnClick: true,
+                anchor: 'bottom-left',
+                offset: [0, -10],
+                className: 'hover-popup'
+            }).setHTML(school.info);
+            answerMarker.current.setPopup(popup);
         }
         const setCurrentMarkerOnMap = () =>{
             currentMarker.current = markerToDisplay[round][0];
@@ -276,7 +287,7 @@ function MapComponent({data, setSchoolName,
         const show_schools = (data) =>{
             data.forEach((school)=>
             {
-                const hoverPopup = new maplibregl.Popup({
+                const popup = new maplibregl.Popup({
                     closeButton: true,
                     closeOnClick: true,
                     anchor: 'bottom-left',
@@ -287,7 +298,7 @@ function MapComponent({data, setSchoolName,
                 const marker = new maplibregl.Marker();
                 // or maybe it is because some chrome extension -> inkognito mode works fine
                 //https://stackoverflow.com/questions/72494154/a-listener-indicated-an-asynchronous-response-by-returning-true-but-the-messag
-                marker.setLngLat([school.long,school.lat]).setPopup(hoverPopup)
+                marker.setLngLat([school.long,school.lat]).setPopup(popup)
                 .addTo(map.current);
                 marker.getElement().addEventListener('click', ()=>{
                     
@@ -309,6 +320,15 @@ function MapComponent({data, setSchoolName,
             });
             return name;
         };
+        const getSchoolFromGeoCoordinates = (lng, lat) => {
+            let schoolRes = {};
+            data.forEach((school) => {
+                if (school.long === lng && school.lat === lat) {
+                    schoolRes = school;
+                }
+            });
+            return schoolRes;
+        }
         
         return (
         <div className="map-wrap">

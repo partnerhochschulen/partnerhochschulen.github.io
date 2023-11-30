@@ -34,7 +34,8 @@ export const data = [
           originalTitle:'https://fundacionneruda.org/en/museums-houses/la-sebastiana-museum-house/',
           description:'La Sebastiana Museum House',
         },
-      ] 
+      ],
+      info:"" 
     },
     {
       continent: "Asia",
@@ -71,7 +72,8 @@ export const data = [
           originalTitle:'https://en.wikipedia.org/wiki/Fuxing_Park',
           description:'Fuxing Park',
         }
-      ]
+      ],
+      info:""
     },
     {
       continent: "Asia",
@@ -112,7 +114,8 @@ export const data = [
           thumbnail:'/images/asia/jordan/odeon_theater.jpg' ,
           originalTitle:'https://jordan-travel.com/odeon-theater-amman/',
           description:'Odeon Theater',}
-      ]
+      ],
+      info:""
     },
     {
       continent: "Asia",
@@ -143,7 +146,8 @@ export const data = [
           originalTitle:'https://bubble.kg/venues/kyrgyz-state-philharmonic-hall-bishkek/',
           description:'Die Kirgisische Staatsphilharmonie Bischkek',
         }
-      ]
+      ],
+      info:""
     },
     {
       continent: "South America",
@@ -186,7 +190,8 @@ export const data = [
           originalTitle:'https://www.expedia.com/Los-Arcos-De-Guadalajara-Zona-Minerva.d6250650.Vacation-Attraction',
           description:'Los Archos',
         }
-      ]
+      ],
+      info:""
     },
     {
       continent: "South America",
@@ -229,7 +234,8 @@ export const data = [
           originalTitle:'https://www.planet-mexiko.com/mexiko-stadt/coyoacan/',
           description:'Coyoacán – der Ort der Kojoten, Schriftsteller und Künstler',
         }
-      ]
+      ],
+      info:""
     },
     {
       continent: "South America",
@@ -268,6 +274,7 @@ export const data = [
         }
 
       ],
+      info:""
     },
     {
       continent: "South America",
@@ -305,6 +312,7 @@ export const data = [
           description:' Cuexcomate Volcano'
         },
       ],
+      info:""
     },
     {
       continent: "South America",
@@ -336,6 +344,7 @@ export const data = [
           description:'Plaza de la Corregidora'
         }
       ],
+      info:""
     },
     {
       continent: "Europe",
@@ -367,6 +376,7 @@ export const data = [
           description:'Völkerbundpalast',
         }
       ],
+      info:""
     },
     {
       continent: "Europe",
@@ -402,6 +412,7 @@ export const data = [
           description:'Die Laza Telecki-Straße',
         },
       ],
+      info:""
     },
     {
       continent: "Asia",
@@ -446,6 +457,7 @@ export const data = [
           description:'Deoksugung Palast',
         },
       ],
+      info:""
     },
     {
       continent: "Europe",
@@ -489,6 +501,7 @@ export const data = [
           description:'Metro'
         },
       ],
+      info:""
     },
     {
       continent: "South America",
@@ -526,6 +539,7 @@ export const data = [
           description:'Parque Municipal (Stadtpark)'
         },
       ],
+      info:""
     },
     {
       continent: "Europe",
@@ -569,6 +583,7 @@ export const data = [
           description:'Mont des Arts'
         },
       ],
+      info:""
     },
     {
       continent: "Europe",
@@ -612,6 +627,7 @@ export const data = [
           description:'Mont des Arts'
         },
       ],
+      info:""
     },
     {
       continent: "Europe",
@@ -661,6 +677,7 @@ export const data = [
           description:'Versteinerter Wald (Steinwald)'
         },
       ],
+      info:""
     },
     {
       continent: "Europe",
@@ -698,6 +715,7 @@ export const data = [
           description:'Der Nationale Kulturpalast'
         },
       ],
+      info:""
     },
     {
       continent: "Europe",
@@ -729,6 +747,7 @@ export const data = [
           description:'Die Bastille'
         },
       ],
+      info:""
     },
     {
       continent: "Europe",
@@ -784,6 +803,7 @@ export const data = [
           description:' Arc de Triomphe'
         },
       ],
+      info:""
     },
     {
       continent: "Europe",
@@ -815,6 +835,7 @@ export const data = [
           description:'The Island Of The Lake'
         },
       ],
+      info:""
     },
     {
       continent: "Europe",
@@ -864,6 +885,7 @@ export const data = [
           description:'Castel Sant’Angelo'
         },
       ],
+      info:""
     },
     //   coordinates were manually added
       {
@@ -877,6 +899,7 @@ export const data = [
         course_of_study: "",
          website:"",
         images: [],
+        info:""
       },
       {
         continent: "Europe",
@@ -889,6 +912,7 @@ export const data = [
         course_of_study: "Product and Process Development",
          website:"",
         images: [],
+        info:""
       },
       {
         continent: "Europe",
@@ -901,6 +925,7 @@ export const data = [
         course_of_study: "Product and Process Development",
          website:"",
         images: [],
+        info:""
       },
       {
         continent: "Europe",
@@ -913,6 +938,7 @@ export const data = [
         course_of_study: "Product and Process Development, Engineering Sciences, Industrial Engineering",
          website:"",
         images: [],
+        info:""
       },
       {
         continent: "Europe",
@@ -925,6 +951,7 @@ export const data = [
         course_of_study: "Engineering Sciences, Industrial Engineering, Product and Process Development",
          website:"",
         images: [],
+        info:""
       },
       {
         continent: "Europe",
@@ -937,6 +964,7 @@ export const data = [
         course_of_study: "Product and Process Development",
          website:"",
         images: [],
+        info:""
       },
       {
         continent: "Europe",
@@ -949,6 +977,7 @@ export const data = [
         course_of_study: "Engineering Sciences, Industrial Engineering, Product and Process Development",
          website:"",
         images: [],
+        info:""
       },
       {
         continent: "Europe",
@@ -961,6 +990,7 @@ export const data = [
         course_of_study: "Product and Process Development",
          website:"",
         images: [],
+        info:""
       },
       {
         continent: "Europe",
@@ -973,6 +1003,7 @@ export const data = [
         course_of_study: "Product and Process Development",
          website:"",
         images: [],
+        info:""
       },
       {
         continent: "Europe",
@@ -985,6 +1016,7 @@ export const data = [
         course_of_study: "No Information Available",
          website:"",
         images: [],
+        info:""
       },
       {
         continent: "Europe",
@@ -997,6 +1029,7 @@ export const data = [
         course_of_study: "Product and Process Development",
          website:"",
         images: [],
+        info:""
       },
       {
         continent: "Europe",
@@ -1009,6 +1042,7 @@ export const data = [
         course_of_study: "Engineering Sciences, Industrial Engineering, Product and Process Development",
          website:"",
         images: [],
+        info:""
       },
       {
         continent: "Europe",
@@ -1021,6 +1055,7 @@ export const data = [
         course_of_study: "Product and Process Development",
          website:"",
         images: [],
+        info:""
       },
       {
         continent: "Europe",
@@ -1033,6 +1068,7 @@ export const data = [
         course_of_study: "Engineering Sciences, Industrial Engineering, Product and Process Development",
          website:"",
         images: [],
+        info:""
       },
       {
         continent: "Europe",
@@ -1045,6 +1081,7 @@ export const data = [
         course_of_study: "Engineering Sciences, Industrial Engineering, Product and Process Development",
          website:"",
         images: [],
+        info:""
       },
       {
         continent: "Europe",
@@ -1057,6 +1094,7 @@ export const data = [
         course_of_study: "Product and Process Development",
          website:"",
         images: [],
+        info:""
       },
       {
         continent: "Europe",
@@ -1069,6 +1107,7 @@ export const data = [
         course_of_study: "Product and Process Development",
          website:"",
         images: [],
+        info:""
       },
       {
         continent: "Europe",
@@ -1081,6 +1120,7 @@ export const data = [
         course_of_study: "No Information Available",
          website:"",
         images: [],
+        info:""
       },
       {
         continent: "Europe",
@@ -1093,6 +1133,7 @@ export const data = [
         course_of_study: "Product and Process Development",
          website:"",
         images: [],
+        info:""
       },
       {
         continent: "Europe",
@@ -1105,6 +1146,7 @@ export const data = [
         course_of_study: "Engineering Sciences, Industrial Engineering, Product and Process Development",
          website:"",
         images: [],
+        info:""
       },
       {
         continent: "Europe",
@@ -1117,6 +1159,7 @@ export const data = [
         course_of_study: "Product and Process Development",
          website:"",
         images: [],
+        info:""
       },
       {
         continent: "Europe",
@@ -1129,6 +1172,7 @@ export const data = [
         course_of_study: "Product and Process Development",
          website:"",
         images: [],
+        info:""
       },
   ];
   
