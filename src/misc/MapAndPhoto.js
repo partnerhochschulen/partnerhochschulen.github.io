@@ -61,24 +61,26 @@ function MapAndPhoto({propSchoolName}){
                         <Info sx={{
                             display:"flex",
                             }}>
-                            <Table >
-                                <tr>
-                                    <td>
-                                        <h4>{selectedSchool.school}
-                                            <a href={selectedSchool.website !== "" ? selectedSchool.website : "/error404" } target="_blank" rel="noreferrer">
-                                                <MdOpenInNew />
-                                            </a>
-                                        </h4>
-                                        <p className="place"><MdPlace />{selectedSchool.place}, {selectedSchool.land}</p>
-                                    </td>
-                                    <td>
-                                        <div className ="courses-of-study">
-                                            <h4>{texts.for_these_courses_of_study}</h4>
-                                            <p>{selectedSchool.course_of_study}</p>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </Table>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <h4>{selectedSchool.school}
+                                                <a href={selectedSchool.website !== "" ? selectedSchool.website : "/error404" } target="_blank" rel="noreferrer">
+                                                    <MdOpenInNew />
+                                                </a>
+                                            </h4>
+                                            <p className="place"><MdPlace />{selectedSchool.place}, {selectedSchool.land}</p>
+                                        </td>
+                                        <td>
+                                            <div className ="courses-of-study">
+                                                <h4>{texts.for_these_courses_of_study}</h4>
+                                                <p>{selectedSchool.course_of_study}</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </Info>
                     </Container>
                 </Item>

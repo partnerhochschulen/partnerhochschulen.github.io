@@ -168,11 +168,6 @@ function MapComponent({data, setSchoolName,
                 markerToDisplay[round][3] = points;
             }
         }
-        
-        // const removeMarker = (marker) => {
-        //     marker.remove();
-        // }
-
         const setAnswerMarkerOnMap = () =>{
             answerMarker.current = markerToDisplay[round][1];
             answerMarker.current.addTo(map.current);

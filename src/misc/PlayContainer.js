@@ -159,16 +159,15 @@ function PlayContainer({randomPhotos}){
                                 <span>{texts.round} {curr+1}/{number_of_rounds}, </span>
                                 <span>{texts.number_of_points} {endResult}</span>
                             </div>
-                    <Button variant ="contained"
-                    onClick={take_guess}
-                    style = {{
-                        margin: "5px",
-                        position: "relative",
-                    }}
-                    disabled = {guessTaken.current || curr !== playedRounds}>
-                        {texts.take_guess}
-                    
-                    </Button>
+                        <Button variant ="contained"
+                        onClick={take_guess}
+                        style = {{
+                            margin: "5px",
+                            position: "relative",
+                        }}
+                        disabled = {guessTaken.current || curr !== playedRounds}>
+                            {texts.take_guess}
+                        </Button>
                     </Item>
                     <Item sx={{
                         width: '50%',
