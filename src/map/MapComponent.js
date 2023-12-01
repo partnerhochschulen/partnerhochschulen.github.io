@@ -168,6 +168,7 @@ function MapComponent({data, setSchoolName,
                 let distance = calculate_distance_in_km(coordinates);
                 let points = calculate_points(distance);
                 markerToDisplay[round][2] = distance;
+                markerToDisplay[round][3] = points;
             }
         }
         const setAnswerMarkerOnMap = () =>{
