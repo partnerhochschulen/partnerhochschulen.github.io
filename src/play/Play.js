@@ -9,6 +9,9 @@ function Play(){
   const { state } = useLocation();
 // get a number of random photos just once, so that it is remembered what photo
   // is shown in each of the rounds
+    useEffect (() => {
+      get_random_photos(data, number_of_rounds);
+    }, []);
     const get_random_photos =(data, number) => {
       const random_photos = [];
       const usedIndexes = new Set();

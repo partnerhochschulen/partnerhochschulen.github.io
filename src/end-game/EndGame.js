@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
 import { ArrowBack } from '@mui/icons-material';
 import { number_of_rounds } from '../misc/const';
-import { useEndResult } from '../misc/EndResultContex';
+import { useEndResult } from '../misc/EndResultContext';
 import * as texts from '../misc/texts';
 import './EndGame.css';
 

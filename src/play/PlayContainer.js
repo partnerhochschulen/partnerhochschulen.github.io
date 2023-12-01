@@ -12,7 +12,7 @@ import { number_of_rounds } from '../misc/const';
 import { ArrowBack } from '@mui/icons-material';
 import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
-import { useEndResult } from '../misc/EndResultContex';
+import { useEndResult } from '../misc/EndResultContext';
 import * as texts from '../misc/texts';
 import {toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
@@ -20,7 +20,7 @@ import "react-toastify/dist/ReactToastify.css";
 function PlayContainer({randomPhotos}){
     const navigate = useNavigate();
     //const MemoizedMapComponent = React.memo(MapComponent);
-    const { setEndResultForEndGame } = useEndResult();
+    const {setEndResultForEndGame}  = useEndResult();
     const [endResult, setEndResult] = useState(0);
 
     //styling of the Item container
@@ -37,7 +37,7 @@ function PlayContainer({randomPhotos}){
     //navigation between rounds
     const [curr,setCurr] = useState(0);
     const [playedRounds,setPlayedRounds] = useState(0);
-    const [photoToShow, setPhotoToShow] = useState([randomPhotos[curr]]);
+    const [photoToShow, setPhotoToShow] = useState(randomPhotos ? [randomPhotos[curr]] : []);
     const get_next_round = () => {
         if (curr < number_of_rounds-1){
             setCurr(curr + 1);

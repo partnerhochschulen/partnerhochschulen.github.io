@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://partnerhochschulen.github.io",
   "dependencies": {
+    "@cypress/react": "^8.0.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mapbox/mapbox-gl-geocoder": "^5.0.1",

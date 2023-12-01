@@ -20,9 +20,10 @@ import { styled } from '@mui/material/styles';
 import { Tooltip } from 'react-tooltip'
 import EndGame from './end-game/EndGame';
 import Error404 from './errors/Error404';
-import { EndResultProvider } from './misc/EndResultContex';
+import { EndResultProvider } from './misc/EndResultContext';
 import * as texts from './misc/texts';
 import { Backdrop, IconButton } from '@mui/material';
+import PlayContainer from './play/PlayContainer';
 
 function App() {
   const [load, setLoad] = useState(true);
