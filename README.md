@@ -66,6 +66,15 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/a
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
+### Testing
+1. npm i cypress if not installed already
+2. Run npm run cypress:open
+3. Choose what to test ( e2e or component)
+4. Create new blank spec in the cypress app
+5. go to VS Code or you editor and go to the file that you just created in cypress/e2e/yourFile.spec.js for e2e testing
+6. Write your tests
+7. with each saving the test will be ran and you can see them in the cypress ap when clicking on the spec file where yur tests are
+
 # Über das Spiel
 ## Funktionalitäten
 ### Spiel spielen

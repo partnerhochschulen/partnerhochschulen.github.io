@@ -16,8 +16,6 @@
     "@mui/material": "^5.14.11",
     "@react-navigation/core": "^6.4.9",
     "@stadiamaps/maplibre-search-box": "^1.0.1",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/testing-library__react": "^10.2.0",
     "geolib": "^3.3.4",
@@ -49,7 +47,8 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "test": "react-scripts test --watchAll --coverage",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "cypress:open": "cypress open"
   },
   "eslintConfig": {
     "extends": [
@@ -68,15 +67,10 @@
       "last 1 safari version"
     ]
   },
-  "jest": {
-    "preset": "react-scripts",
-    "coverageThreshold": {
-      "global": {
-        "lines": 80
-      }
-    }
-  },
   "devDependencies": {
-    "gh-pages": "^6.1.0"
+    "@testing-library/jest-dom": "^6.1.5",
+    "@testing-library/react": "^12.1.2",
+    "gh-pages": "^6.1.0",
+    "jest-puppeteer": "^9.0.1"
   }
 }
