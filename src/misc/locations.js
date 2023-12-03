@@ -162,25 +162,25 @@ export const data = [
       images: [
         {
           original:'images/south_america/mexico/guadelajara/hospicio_cabanas.JPG' ,
-          thumbnail:'images/south_america/mexico/hospicio_cabanas.JPG' ,
+          thumbnail:'images/south_america/mexico/guadelajara/hospicio_cabanas.JPG' ,
           originalTitle:'https://de.wikipedia.org/wiki/Hospicio_Caba%C3%B1as',
           description:'Hospicio Cabañas',
         },
         {
           original:'/images/south_america/mexico/guadelajara/kathedrale_guadalajara.jpg' ,
-          thumbnail:'/images/south_america/mexico/kathedrale_guadalajara.jpg' ,
+          thumbnail:'/images/south_america/mexico/guadelajara/kathedrale_guadalajara.jpg' ,
           originalTitle:'https://de.wikipedia.org/wiki/Kathedrale_von_Guadalajara',
           description:'Die Kathedrale von Guadalajara',
         },
        {
           original:'/images/south_america/mexico/guadelajara/teatro_degollado_guadalajara.JPG' ,
-          thumbnail:'/images/south_america/mexico/teatro_degollado_guadalajara.JPG' ,
+          thumbnail:'/images/south_america/mexico/guadelajara/teatro_degollado_guadalajara.JPG' ,
           originalTitle:'https://de.wikipedia.org/wiki/Teatro_Degollado',
           description:'Das Teatro Degollado',
         },
         {
           original:'/images/south_america/mexico/guadelajara/plaza_de_armas.jpg' ,
-          thumbnail:'/images/south_america/mexico/plaza_de_armas.jpg' ,
+          thumbnail:'/images/south_america/mexico/guadelajara/plaza_de_armas.jpg' ,
           originalTitle:'https://es.wikipedia.org/wiki/Plaza_de_Armas_de_Guadalajara',
           description:' Plaza de Armas von Guadalajara',
         },
