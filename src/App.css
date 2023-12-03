@@ -58,13 +58,14 @@ iframe#webpack-dev-server-client-overlay{display:none !important}
 }
 @media only screen and (max-width: 500px) {
   .App{
-    min-width: 300px;
+    min-width: 100px;
+    padding: 10px;
   }
   .big-map{
-    width:70%;
+    margin:0;
   }
   .title{
-    font-size: smaller;
-    padding:30px;
+    font-size: 10px;
+
   }
 }
