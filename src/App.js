@@ -9,6 +9,8 @@ import {
   BrowserRouter as Router,
   Routes, 
   Route,
+  BrowserRouter,
+  HashRouter,
 } from "react-router-dom";
 import Main from './main/Main';
 import Partnerchools from './show-schools/Partnerschools';
@@ -81,7 +83,7 @@ function App() {
                 
               </div>
   
-              <Router>
+              <HashRouter>
                 <Routes>
                   <Route path="/" element={<Main />} />
                   <Route path="/instructions" element={<Instructions />} />
@@ -91,7 +93,7 @@ function App() {
                   <Route path="/end-game" element={<EndGame />} />
                   <Route path="/error404" element={<Error404 />} />
                 </Routes>
-              </Router>
+              </HashRouter>
               <div className='action-menu-instructions'>
                 <IconButton color="primary" size="large" aria-label="instructions-button"
                   onClick={()=>{setOpen(!open)}}>
