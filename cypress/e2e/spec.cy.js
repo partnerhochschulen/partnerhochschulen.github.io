@@ -42,7 +42,7 @@ describe('Navigating to right Game URL and back Test', () => {
     cy.contains('Spiel starten').click()
 
     // Should be on a new URL which
-    // includes '/commands/actions'
+    // includes '/play'
     cy.url().should('include', '/play')
     cy.contains('Zurück zur Hauptansicht').click()
     cy.contains('Punkte verlieren')
