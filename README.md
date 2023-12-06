@@ -54,7 +54,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Get started and deploy Deployment
+### Get started and deploy project
 
 1. Clone the repo
 2. run "npm install" to installl all the node modules because they are not being kept in github
@@ -79,7 +79,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ## Funktionalitäten
 ### Spiel spielen
 Das Spiel besteht aus mehreren Runden, deren Anzahl in der const.js Datei konfigurierbar ist. Ist eine Runde gespiel (= eine Schätzung ist abgegeben worden) besteht die Möglichkeit zu dieser Runde zurückzukehren und das Ergebnis erneut anzeigen zu lassen. Eine Fortschritssanzeige zeigt die Zahl der gespielten/ zu spielenden Runde.\
- Ist eine Schätzung nicht abgegeben ist es nicht möglich zur nächsten Runde zu navigieren. Eine Schätzung abzugeben is nur dann möglich, wenn ein Schätzungsmarker auf der Karten gesetzt wurde.
+Ist eine Schätzung nicht abgegeben ist es nicht möglich zur nächsten Runde zu navigieren. Eine Schätzung abzugeben is nur dann möglich, wenn ein Schätzungsmarker auf der Karten gesetzt wurde.
 #### Bewertung der Schätzung
 Als Bewertung der Schätzung gilt das Anzeigen des richtigen Standortes der Partnerhochschule und die Distanz zwischen des richtigen Standortes (rot) und der Schätzung (blau). Außerdem wird die Punktezahl erhöht je nach Distanz zum richtigen Standort oder sie bleibt gleich, falls die Distanz zwischen Schätzung und Antwort viel zu groß ist.\
 Weitere Informationen zur Antwort sind durch das Klicken auf dem Antwortmarker (rot) verfügbar.
@@ -110,4 +110,5 @@ Die Attribute jedes Partnerhochschulenobjekts stammen aus der Excel Datei, die d
 Hier werden:
 - die Anzahl der Runden
 - die map Style
+- Anzeige der zusätzlichen Info frei- oder ausschalten
 bestimmt.

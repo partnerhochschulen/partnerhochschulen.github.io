@@ -6,6 +6,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import '../map/MapComponent.css';
 import * as maptilersdk from '@maptiler/sdk';
 import "@maptiler/sdk/dist/maptiler-sdk.css";
+import { show_info } from '../misc/const';
 
 function MapComponent({data, setSchoolName,
      setGoToMapAndPhoto, alreadyInMapAndPhoto,
@@ -201,7 +202,10 @@ function MapComponent({data, setSchoolName,
             await map.current.once('moveend').then(() => {
                 setLayers(coordinates);
             });
-            setInfoPopup();
+            if(show_info){
+                setInfoPopup();
+            }
+            console.log(markerToDisplay);
             
         }
         const showPreviousRounds = async () =>{
@@ -220,7 +224,10 @@ function MapComponent({data, setSchoolName,
                     essential: true,
                 });
                 setLayers([ markerToDisplay[round][0].getLngLat().toArray(), markerToDisplay[round][1].getLngLat().toArray()]);
-                setInfoPopup();
+                if(show_info){
+                    setInfoPopup();
+                }
+                
             }
             
         }

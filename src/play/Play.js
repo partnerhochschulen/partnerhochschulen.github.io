@@ -7,7 +7,7 @@ import { useLocation } from 'react-router-dom';
 
 function Play(){
   const { state } = useLocation();
-// get a number of random photos just once, so that it is remembered what photo
+  // get a number of random photos just once, so that it is remembered what photo
   // is shown in each of the rounds
     useEffect (() => {
       get_random_photos(data, number_of_rounds);

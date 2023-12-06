@@ -105,7 +105,7 @@ function PlayContainer({randomPhotos}){
         mainlist.length = 0;
         for (let round = 0; round < number_of_rounds; round++) {
             var guessMarker = new maplibregl.Marker({ "color": "blue" });
-                        var answerCoordinates = get_current_image_coordinates(round);
+            var answerCoordinates = get_current_image_coordinates(round);
             var answerMarker = new maplibregl.Marker({ "color": "red" }).setLngLat(answerCoordinates);
             var distance = 0;
             var points = null;

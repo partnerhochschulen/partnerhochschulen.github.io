@@ -96,7 +96,6 @@ function MapAndPhoto({propSchoolName}){
                     </div>
                 </Item>
 
-
             </Stack>
             <Button  variant ="outlined" color="secondary"
             style ={{
