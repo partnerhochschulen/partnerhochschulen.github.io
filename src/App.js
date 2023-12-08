@@ -19,13 +19,13 @@ import Play from './play/Play';
 import Dialog from '@mui/material/Dialog';
 import MdHelpOutline  from '@mui/icons-material/HelpOutline';
 import { styled } from '@mui/material/styles';
-import { Tooltip } from 'react-tooltip'
+import Tooltip from '@mui/material/Tooltip';
 import EndGame from './end-game/EndGame';
 import Error404 from './errors/Error404';
 import { EndResultProvider } from './misc/EndResultContext';
 import * as texts from './misc/texts';
 import { Backdrop, IconButton } from '@mui/material';
-import PlayContainer from './play/PlayContainer';
+import { Button } from 'react-bootstrap';
 
 function App() {
   const [load, setLoad] = useState(true);
@@ -79,7 +79,25 @@ function App() {
                   </h2>
                   <h3>{texts.second_title}</h3>
                 </div>
+                <div className='action-menu-instructions'>
+                  
+                  <Tooltip title={texts.instructions_tooltip} 
+                  placement='left' open={true} arrow>
+                    <IconButton 
+                    color="primary" 
+                    size="large" 
+                    aria-label="instructions-button"
+                      onClick={()=>{setOpen(!open)}}>
+                      <MdHelpOutline fontSize="large" />
+                    </IconButton>
+                  </Tooltip>
+                  <Backdrop open={open}>
+                    <BootstrapDialog open={open} onClose={handleClose} aria-labelledby="customized-dialog-title">
+                      <Instructions close = {handleClose} />
+                    </BootstrapDialog>
+                  </Backdrop>
                 
+              </div>
                 
               </div>
   
@@ -94,26 +112,6 @@ function App() {
                   <Route path="/error404" element={<Error404 />} />
                 </Routes>
               </HashRouter>
-              <div className='action-menu-instructions'>
-                <IconButton color="primary" size="large" aria-label="instructions-button"
-                  onClick={()=>{setOpen(!open)}}>
-                    <Tooltip id="my-tooltip"
-                      place="right"
-                      style ={{
-                        fontSize: "12px",
-                      }}>
-                        {texts.instructions_tooltip}
-                    </Tooltip>
-                  <MdHelpOutline fontSize="large" />
-                </IconButton>
-                
-                <Backdrop open={open}>
-                  <BootstrapDialog open={open} onClose={handleClose} aria-labelledby="customized-dialog-title">
-                    <Instructions close = {handleClose} />
-                  </BootstrapDialog>
-                </Backdrop>
-                
-              </div>
             </div>
           )
         }
