@@ -59,8 +59,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/a
 1. Clone the repo
 2. run "npm install" to installl all the node modules because they are not being kept in github
 3. run "npm run build" to install the "build" folder that contains the logic for production building
-4. run "npm run deploy" to deploy any new changes to production version
-5. in github go to repo -> actions -> you can see if the build was succesfull when the last job is green. Clicking on it will give you more details
+4. run "npm run deploy" to deploy any new changes to production version or "npm start" to start the local server of the app
+5. if deployed, in github go to repo -> actions -> you can see if the build was succesfull when the last job is green. Clicking on it will give you more details
 
 ### `npm run build` fails to minify
 
