@@ -47,7 +47,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 ### Making a Progressive Web App
 - this means that the app can be downloaded from the browser
-- to configure a progressive web app or to see if ht ecriteria is met go to website->inspect->lighthouse-> choose category "Progressive Web App" and run the "Analyze the page load"
+- to configure a progressive web app or to see if the criteria is met go to website->inspect->lighthouse-> choose category "Progressive Web App" and run the "Analyze the page load"
 - Learn more here: https://developer.chrome.com/docs/lighthouse/pwa/installable-manifest/?utm_source=lighthouse&utm_medium=devtools
 
 ### Advanced Configuration
