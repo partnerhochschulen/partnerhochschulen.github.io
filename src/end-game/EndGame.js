@@ -15,7 +15,7 @@ function EndGame(){
             <div className='end-game-content'>
                 <h2>{texts.end_game_h2}</h2>
                 <h3>{texts.end_game_h3}</h3>
-                <p>{texts.end_game_p1} {number_of_rounds} {texts.end_game_p2} {endResultForEndGame} {texts.end_game_p3}</p>
+                <p>{texts.end_game_p1} <b>{number_of_rounds}</b> {texts.end_game_p2} <b>{endResultForEndGame}</b> {texts.end_game_p3} <b>{number_of_rounds*5} </b>{texts.end_game_p4}</p>
                 <Button  variant ="contained"
                 style ={{
                     position: "relative",

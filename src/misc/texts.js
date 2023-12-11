@@ -45,7 +45,8 @@ export const end_game_h2 = "Vielen Dank fürs Spielen!";
 export const end_game_h3 = "Wir hoffen, es hat Ihnen gefallen und Sie konnten viel dabei lernen!";
 export const end_game_p1 = "Sie haben insgesamt ";
 export const end_game_p2 = " Runden gespielt und ";
-export const end_game_p3 = " Punkte gesammelt. Sie können nun das Spiel erneut starten oder zur Hauptansicht zurückkehren. ";
+export const end_game_p3 = " Punkte gesammelt. Die maximal erreichbare Punktzahl in dieser Spielsitzung beträgt: "
+export const end_game_p4 = " Punkte. Sie können nun das Spiel erneut starten oder zur Hauptansicht zurückkehren. ";
 
 //MapAndPhoto.js
 export const for_these_courses_of_study = "Für folgende Studiengänge verfügbar:";
