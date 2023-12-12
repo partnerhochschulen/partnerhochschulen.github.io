@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PlayContainer from '../play/PlayContainer';
 import {data} from '../misc/locations';
 import { number_of_rounds } from '../misc/const';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import Dialog from '@mui/material/Dialog';
+import Instructions from '../instructions/Instructions';
 
 function Play(){
   const { state } = useLocation();

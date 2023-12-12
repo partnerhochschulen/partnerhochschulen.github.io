@@ -9,7 +9,6 @@ import {
   BrowserRouter as Router,
   Routes, 
   Route,
-  BrowserRouter,
   HashRouter,
 } from "react-router-dom";
 import Main from './main/Main';
@@ -33,11 +32,13 @@ function App() {
     setTimeout(()=>{
       setLoad(false);
     },3000);
+    localStorage.setItem('instructionsRead', 'false');
   },[]);
 
   const [open, setOpen] = useState(false);
   const handleClose = () => {
     setOpen(false);
+    localStorage.setItem('instructionsRead', 'true');
   };
   const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     '& .MuiDialog-paper': {
@@ -49,74 +50,73 @@ function App() {
   }));
 
   return (
-    <EndResultProvider>
-      <div className="App">
-        {load ?(
-          <div className='loading'>
-            <ColorRing
-              visible={true}
-              height="60"
-              width="60"
-              ariaLabel="color-ring-loading"
-              wrapperStyle={{}}
-              wrapperClass=""
-              colors={['red','#E95A0C', '#B52483', '#000000', '#F2F2F2']}
-            />
-          </div>  
-          ):(
-            <div>
-              <div className='logo'>
-                <img src="logo.jpg" alt="logo" style={{
-                  width: "80px",
-                  position: "absolute",
-                  top: "10px",
-                  left: "10px",
-                }}></img>
-              </div>
-              <div className='title-and-instructions'>
-                <div className='title'>
-                  <h2>{texts.title}
-                  </h2>
-                  <h3>{texts.second_title}</h3>
+    <HashRouter>
+      <EndResultProvider>
+        <div className="App">
+          {load ?(
+            <div className='loading'>
+              <ColorRing
+                visible={true}
+                height="60"
+                width="60"
+                ariaLabel="color-ring-loading"
+                wrapperStyle={{}}
+                wrapperClass=""
+                colors={['red','#E95A0C', '#B52483', '#000000', '#F2F2F2']}
+              />
+            </div>  
+            ):(
+              <div>
+                <div className='logo'>
+                  <img src="logo.jpg" alt="logo" style={{
+                    width: "80px",
+                    position: "absolute",
+                    top: "10px",
+                    left: "10px",
+                  }}></img>
                 </div>
-                <div className='action-menu-instructions'>
+                <div className='title-and-instructions'>
+                  <div className='title'>
+                    <h2>{texts.title}
+                    </h2>
+                    <h3>{texts.second_title}</h3>
+                  </div>
+                  <div className='action-menu-instructions'>
+                    
+                    <Tooltip title={texts.instructions_tooltip} 
+                    placement='left' open={true} arrow>
+                      <IconButton 
+                      color="primary" 
+                      size="large" 
+                      aria-label="instructions-button"
+                        onClick={()=>{setOpen(!open)}}>
+                        <MdHelpOutline fontSize="large" />
+                      </IconButton>
+                    </Tooltip>
+                    <Backdrop open={open}>
+                      <BootstrapDialog open={open} onClose={handleClose} aria-labelledby="customized-dialog-title">
+                        <Instructions close = {handleClose} inGame={false}/>
+                      </BootstrapDialog>
+                    </Backdrop>
                   
-                  <Tooltip title={texts.instructions_tooltip} 
-                  placement='left' open={true} arrow>
-                    <IconButton 
-                    color="primary" 
-                    size="large" 
-                    aria-label="instructions-button"
-                      onClick={()=>{setOpen(!open)}}>
-                      <MdHelpOutline fontSize="large" />
-                    </IconButton>
-                  </Tooltip>
-                  <Backdrop open={open}>
-                    <BootstrapDialog open={open} onClose={handleClose} aria-labelledby="customized-dialog-title">
-                      <Instructions close = {handleClose} />
-                    </BootstrapDialog>
-                  </Backdrop>
-                
+                </div>
+                  
+                </div>
+                  <Routes>
+                    <Route path="/" element={<Main />} />
+                    <Route path="/instructions" element={<Instructions />} />
+                    <Route path="/show-schools" element={<Partnerchools />} />
+                    <Route path="/play" element={<Play />} />
+                    <Route path='/show-schools/MapAndPhoto' element={<MapAndPhoto />} />
+                    <Route path="/end-game" element={<EndGame />} />
+                    <Route path="/error404" element={<Error404 />} />
+                  </Routes>
               </div>
-                
-              </div>
-  
-              <HashRouter>
-                <Routes>
-                  <Route path="/" element={<Main />} />
-                  <Route path="/instructions" element={<Instructions />} />
-                  <Route path="/show-schools" element={<Partnerchools />} />
-                  <Route path="/play" element={<Play />} />
-                  <Route path='/show-schools/MapAndPhoto' element={<MapAndPhoto />} />
-                  <Route path="/end-game" element={<EndGame />} />
-                  <Route path="/error404" element={<Error404 />} />
-                </Routes>
-              </HashRouter>
-            </div>
-          )
-        }
-      </div>
-    </EndResultProvider>
+            )
+          }
+        </div>
+      </EndResultProvider>
+    </HashRouter>
   );
 }
 

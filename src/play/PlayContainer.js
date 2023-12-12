@@ -16,6 +16,8 @@ import { useEndResult } from '../misc/EndResultContext';
 import * as texts from '../misc/texts';
 import {toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import Instructions from '../instructions/Instructions';
+import Dialog from '@mui/material/Dialog';
 
 function PlayContainer({randomPhotos}){
     const navigate = useNavigate();
@@ -141,6 +143,7 @@ function PlayContainer({randomPhotos}){
     }
 
     return (
+        
         <div className="play-container">
             <div className="content">
                 <Stack direction="row" spacing={4} style = {{padding:'5px'}}>

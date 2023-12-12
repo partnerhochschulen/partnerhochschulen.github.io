@@ -9,16 +9,16 @@ import DialogActions from '@mui/material/DialogActions';
 import * as texts from '../misc/texts';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
-import { Paper } from '@material-ui/core';
-import { AppBar, Tab, Tabs } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 
-function Instructions({close}){
+function Instructions({close, inGame}){
     const [curr, setCurr] = useState(1);
     const pages = [texts.instructions, texts.points];
-
+    const navigate = useNavigate();
     const closeInstructions = () => {
       close();
+      localStorage.setItem('instructionsRead', 'true');
     };
     const goToNext = () => {
       setCurr(curr + 1);
@@ -52,6 +52,15 @@ function Instructions({close}){
             </DialogContentText>
           </DialogContent>
           <DialogActions>
+            <Button
+            variant='contained'
+            style = {{
+              visibility: inGame === true ? 'visible' : 'hidden'
+            }}
+            onClick={()=>
+            {navigate('/play');
+            localStorage.setItem('instructionsRead', 'true');
+            close();}}>Los geht's</Button>
             {curr < pages.length ? (
               <div>
                 <Button onClick={goToNext}>{texts.next_page}</Button>
