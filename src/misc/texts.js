@@ -15,12 +15,12 @@ export const second_title = "Fakultät für  Informatik und Ingenieurwissenschaf
 export const instructions_tooltip = "Hinweise";
 // Instructions.js
 //[titel,text]
-export const instructions = ["Über die App", "Mit dieser App können Sie die Partnerhochschulen der TH Köln und die Städte, in denen sie sich befinden," +
-"kennen lernen. Mit der Option “Partnerhochschulen anzeigen” können Sie sich die "+
+export const instructions = ["Über die App", "Mit dieser App können Sie die Partnerhochschulen der TH Köln und die Städte, in denen sie sich befinden, " +
+"kennenlernen. Mit der Option “Partnerhochschulen anzeigen” können Sie sich die "+
 "Standorte der Partnerhochschulen und Sehenswürdigkeiten in der Nähe anzeigen lassen "+
 "und mit der Option “Spiel spielen” können Sie Ihr geographisches Wissen testen und "+
 "die Partnerhochschulen spielerisch kennenlernen. "+
-"Benutzen Sie den Knopf “Zurück zur Hauptansicht”, um zu der Hauptansicht zurückzukehren."+
+"Benutzen Sie den Knopf “Zurück zur Hauptansicht”, um zu der Hauptansicht zurückzukehren. "+
 "In diesem Spiel sind mehrere Runden zu spielen. Nach jeder Runde bekommen Sie "+
 "Feedback zu Ihrer Schätzung und die Distanz zwischen dem geschätzten Standort "+
 "und dem richtigen Zielort wird angezeigt. Je nach Entfernung ändert sich Ihre "+
