@@ -205,7 +205,6 @@ function MapComponent({data, setSchoolName,
             if(show_info){
                 setInfoPopup();
             }
-            console.log(markerToDisplay);
             
         }
         const showPreviousRounds = async () =>{
