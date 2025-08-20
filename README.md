@@ -62,6 +62,52 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/a
 4. run "npm run deploy" to deploy any new changes to production version or "npm start" to start the local server of the app
 5. if deployed, in github go to repo -> actions -> you can see if the build was succesfull when the last job is green. Clicking on it will give you more details
 
+### Using Yarn Instead of npm
+
+If you prefer using Yarn instead of npm, you can use the following commands:
+
+1. Install Yarn (if not already installed):
+```bash
+npm install -g yarn
+```
+
+2. Install dependencies:
+```bash
+yarn install
+```
+
+3. Start the development server:
+```bash
+yarn start
+```
+
+4. Run tests:
+```bash
+yarn test
+```
+
+5. Build for production:
+```bash
+yarn build
+```
+
+6. Deploy to production:
+```bash
+yarn deploy
+```
+
+7. Install Cypress for testing:
+```bash
+yarn add cypress
+```
+
+8. Open Cypress:
+```bash
+yarn cypress:open
+```
+
+Note: Make sure to use either npm or Yarn consistently throughout your project. Don't mix them as this can lead to dependency conflicts.
+
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

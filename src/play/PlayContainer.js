@@ -1,10 +1,13 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useRef, useState, useCallback} from 'react';
 import {Stack } from '@mui/material';
 import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
 import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
 import MapComponent from '../map/MapComponent';
+
+// Memoize MapComponent to prevent unnecessary re-renders
+const MemoizedMapComponent = React.memo(MapComponent);
 import './PlayContainer.css'
 import ImageGallery from "react-image-gallery";
 import {data} from '../misc/locations';
@@ -18,10 +21,12 @@ import {toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import Instructions from '../instructions/Instructions';
 import Dialog from '@mui/material/Dialog';
+import DialogTitle from '@mui/material/DialogTitle';
+import DialogContent from '@mui/material/DialogContent';
+import DialogActions from '@mui/material/DialogActions';
 
 function PlayContainer({randomPhotos}){
     const navigate = useNavigate();
-    //const MemoizedMapComponent = React.memo(MapComponent);
     const {setEndResultForEndGame}  = useEndResult();
     const [endResult, setEndResult] = useState(0);
 
@@ -91,6 +96,7 @@ function PlayContainer({randomPhotos}){
             }
             guessTaken.current=true;
             setEndResult(endResult + markerToDisplay[curr][3]);
+            setShowUniversityInfo(true);
         }
     }
     
@@ -123,24 +129,45 @@ function PlayContainer({randomPhotos}){
         var filtered = markerToDisplay.filter(round => round[0].getLngLat() !== undefined);
         return filtered.length;
     }
-    const notified = useRef(false);
-    const notify = ()=>{
-        toast.warn(texts.warning, 
-        {
-            position: toast.POSITION.TOP_CENTER,
-        }
-        );   
-        notified.current = true;
-    }
+
     const handleGoBack = () =>{
-        if(notified.current){
             navigate('/');
         }
-        else {
-            notify();
-        }
-        
-    }
+
+    const [hintOpen, setHintOpen] = useState(false);
+    
+    // Combined function to get current school and image data
+    const getCurrentData = () => {
+        const currentPhoto = randomPhotos[curr];
+        let foundSchool = null;
+        let foundImage = null;
+        data.forEach((school) => {
+            school.images.forEach((image) => {
+                if (image.original === currentPhoto.original) {
+                    foundSchool = school;
+                    foundImage = image;
+                }
+            });
+        });
+        return { school: foundSchool, image: foundImage };
+    };
+
+    const [showTip, setShowTip] = useState(false);
+    const [showUniversityInfo, setShowUniversityInfo] = useState(false);
+    const [hasClickedMap, setHasClickedMap] = useState(false);
+
+    const handleMapClick = useCallback(() => {
+        setHasClickedMap(true);
+    }, []);
+
+    useEffect(() => {
+        setShowTip(false); // Reset tip when round changes
+        setShowUniversityInfo(false); // Reset university info when round changes
+        setHasClickedMap(false); // Reset map click state when round changes
+    }, [curr]);
+
+    // Get current data once to avoid multiple function calls
+    const currentData = getCurrentData();
 
     return (
         
@@ -157,7 +184,9 @@ function PlayContainer({randomPhotos}){
                              showFullscreenButton={false}
                              disableKeyDown = {true} 
                              stopPropagation={true}
-                             showNav={false}/>
+                             showNav={false}
+                             additionalClass="custom-small-image-gallery"
+                             />
                             <div className="buttons-rounds">
                                 <Button variant ="text"
                                     onClick={get_previous_round}
@@ -176,7 +205,23 @@ function PlayContainer({randomPhotos}){
                                     {curr === number_of_rounds-1 ? texts.end_game: texts.next_round}
                                 </Button>
                             </div>
-
+                            <Button variant="outlined" color="primary" className="small-tip-button" onClick={()=>setShowTip(true)}>
+                                Tipp erhalten
+                            </Button>
+                            {showTip && (
+                                <div className="small-tip-info">
+                                    <i>{currentData.image?.tip || ''}</i>
+                                </div>
+                            )}
+                            {showUniversityInfo && (
+                                <div className="small-tip-info">
+                                    <b>Universität:</b> {currentData.school?.school}<br/>
+                                    {currentData.school?.website && (
+                                        <><b>Website:</b> <a href={currentData.school.website} target="_blank" rel="noopener noreferrer" style={{color: '#1976d2', textDecoration: 'underline'}}>Besuchen</a><br/></>
+                                    )}
+                                    <b>Fun Fact:</b> {currentData.school?.funFact}
+                                </div>
+                            )}
                             <div className="progress">
                                 <span>{texts.round} {curr+1}/{number_of_rounds}, </span>
                                 <span>{texts.number_of_points} {endResult}</span>
@@ -187,21 +232,23 @@ function PlayContainer({randomPhotos}){
                             margin: "5px",
                             position: "relative",
                         }}
-                        disabled = {guessTaken.current || curr !== playedRounds}>
+                        disabled = {!hasClickedMap || guessTaken.current || curr !== playedRounds}>
                             {texts.take_guess}
                         </Button>
                     </Item>
                     <Item sx={{
                         width: '50%',
                     }}>
-                        <MapComponent 
+                        <MemoizedMapComponent 
                             alreadyInMapAndPhoto={true}
                             guessTaken={guessTaken.current} 
                             markerToDisplay ={markerToDisplay} 
                             data = {data}
                             round={curr}
                             playedRounds = {playedRounds}
-                            mode = "play"/>
+                            mode = "play"
+                            onMapClick={handleMapClick}
+                        />
                     </Item>
                 </Stack>
                 <div className='buttons'>

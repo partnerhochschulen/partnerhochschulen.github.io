@@ -10,7 +10,7 @@ import { show_info } from '../misc/const';
 
 function MapComponent({data, setSchoolName,
      setGoToMapAndPhoto, alreadyInMapAndPhoto,
-      guessTaken, round, markerToDisplay, playedRounds, mode}){
+      guessTaken, round, markerToDisplay, playedRounds, mode, onMapClick}){
         const mapContainer = useRef(null);
         const map = useRef(null);
         const [lng] = useState(10);
@@ -117,13 +117,13 @@ function MapComponent({data, setSchoolName,
         useEffect(() => {
             let isMounted = true;
             
-            // initialize map 
-            if(isMounted){
+            if(isMounted && !map.current){
                 fetchData();
             }
-            // map for the play container without data
-            if(mode ==="play" && isMounted){
-                // allow marker to be set only if the round is not played yet
+            
+            if(mode ==="play" && isMounted && map.current){
+                map.current.off('click');
+                
                 if(round >= playedRounds){
                     map.current.on('click', (e) => {setMarkerOnMap(e)});
                     if(isGuessTaken.current){
@@ -134,42 +134,43 @@ function MapComponent({data, setSchoolName,
                             evaluateGuess();
                         }
                     }
-                
                 } else if(round < playedRounds){
-                    // show the markers from the previous rounds
-                    // allow the user to navigate back to played rounds and see results
                     showPreviousRounds();
                 } 
-            }
-
-            //map for the partnerschools container with data
-            else if(mode === "partner" && isMounted) {
+            } else if(mode === "partner" && isMounted && map.current) {
                 show_schools(data);
             }
-            else{
                 
-            }
             return () => {
                 isMounted = false;
-                map.current.remove();
             }
             
-        });
+        }, [mode, round, playedRounds]);
+
+        useEffect(() => {
+            return () => {
+                if (map.current) {
+                map.current.remove();
+            }
+            };
+        }, []);
         
         const setMarkerOnMap = (e) => {
             if(answerMarker.current === null){
-                const marker =  markerToDisplay[round][0]
+                const marker = markerToDisplay[round][0]
                 .setLngLat([e.lngLat.lng, e.lngLat.lat])
                 .addTo(map.current);
                 currentMarker.current = marker;
+                
                 const coordinates = [
-                    markerToDisplay[round][0].getLngLat().toArray(),
+                    marker.getLngLat().toArray(),
                     markerToDisplay[round][1].getLngLat().toArray(),
                 ];
-                let distance = calculate_distance_in_km(coordinates);
-                let points = calculate_points(distance);
-                markerToDisplay[round][2] = distance;
-                markerToDisplay[round][3] = points;
+                
+                markerToDisplay[round][2] = calculate_distance_in_km(coordinates);
+                markerToDisplay[round][3] = calculate_points(markerToDisplay[round][2]);
+                
+                if (onMapClick) onMapClick();
             }
         }
         const setAnswerMarkerOnMap = () =>{

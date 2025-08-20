@@ -43,3 +43,24 @@
         object-fit: contain;
     }
 }
+
+.custom-small-image-gallery .image-gallery-slide img {
+    max-height: 220px;
+    width: auto;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+.small-tip-button {
+    font-size: 0.75em !important;
+    padding: 2px 8px !important;
+    min-width: 0 !important;
+    margin-bottom: 4px !important;
+}
+
+.small-tip-info {
+    font-size: 0.7em;
+    color: #555;
+    margin-bottom: 8px;
+    margin-top: -3px;
+}
